@@ -49,6 +49,7 @@ public class ProxyCacheUtils {
 
     static String encode(String url) {
         try {
+            url = url + ".videotempmp4";
             return URLEncoder.encode(url, "utf-8");
         } catch (UnsupportedEncodingException e) {
             throw new RuntimeException("Error encoding url", e);
@@ -57,6 +58,7 @@ public class ProxyCacheUtils {
 
     static String decode(String url) {
         try {
+            url = url.replace(".videotempmp4", "");
             return URLDecoder.decode(url, "utf-8");
         } catch (UnsupportedEncodingException e) {
             throw new RuntimeException("Error decoding url", e);
